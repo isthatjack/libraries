@@ -11,17 +11,14 @@ library.muted = {}
 
 function library:mute(plr)
     if not library.muted[plr.Name] then
-        library.muted[plr.Name] = plr
+        table.insert(library.muted, plr)
     end
 end
 
 function library:unmute(plr)
-    if library.muted[plr.Name] then
-        for i = 1,#library.muted do
-            if library.muted[i] == plr then
-                table.remove(library.muted,i)
-                break
-            end
+    for i = 1, #library.muted do
+        if library.muted[i] == plr then
+            table.remove(library.muted,i)
         end
     end
 end
