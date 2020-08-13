@@ -31,7 +31,7 @@ RunService.Heartbeat:Connect(function()
         if plr.Character then
             for _, Sound in pairs(plr.Character:GetDescendants()) do
                 if Sound.ClassName == "Sound" and Sound.IsPlaying then
-                    Sound.IsPlaying = false
+                    Sound.Playing = false
                 end
             end
         end
